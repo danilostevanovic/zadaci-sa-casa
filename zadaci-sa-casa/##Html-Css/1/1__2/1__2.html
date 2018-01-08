@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #ecf0f1;
+            color: #fff;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .main-nav,
+        .drop-nav {
+            background: #2c3e50;
+        }
+
+        .main-nav {
+            float: left;
+            border-radius: 4px;
+            margin-top: 8px;
+            border: solid 1px #1e2a36;
+        }
+
+        .main-nav>li {
+            float: left;
+            border-left: solid 1px #1e2a36;
+        }
+
+        .main-nav li:first-child {
+            border-left: none;
+        }
+
+        .main-nav a {
+            color: #fff;
+            display: block;
+            padding: 10px 30px;
+            text-decoration: none;
+        }
+
+        .dropdown,
+        .flyout,
+        .flyout-2 {
+            position: relative;
+        }
+
+        .dropdown:after {
+            content: "\25BC";
+            font-size: .5em;
+            display: block;
+            position: absolute;
+            top: 38%;
+            right: 12%;
+        }
+
+        .drop-nav,
+        .flyout-nav,
+        .flyout-nav-2 {
+            position: absolute;
+            display: none;
+        }
+
+        .drop-nav li {
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+        }
+
+        .dropdown:hover>.drop-nav,
+        .flyout:hover>.flyout-nav {
+            display: block;
+        }
+
+        .flyout-2:hover>.flyout-nav-2 {
+            display: block;
+        }
+
+        .flyout-nav {
+            left: 100%;
+            top: 0;
+        }
+
+        .flyout-nav-2 {
+            left: 100%;
+            top: 0;
+        }
+
+        .flyout-2:after {
+            content: '\25BA';
+            font-size: .5em;
+            position: absolute;
+            top: 35%;
+            right: 20%;
+        }
+
+        .flyout:hover a,
+        .flyout-nav,
+        .flyout-nav-2 {
+            background: #395066;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="main-nav">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+        <li class="dropdown">
+            <a href="#">Work</a>
+            <ul class="drop-nav">
+                <li>
+                    <a href="#">Design</a>
+                </li>
+                <li>
+                    <a href="#">Development</a>
+                </li>
+                <li class="flyout">
+                    <a href="#">Photography</a>
+                    <ul class="flyout-nav">
+                        <li>
+                            <a href="#">Nature</a>
+                        </li>
+                        <li>
+                            <a href="#">People</a>
+                        </li>
+                        <li class="flyout-2">
+                            <a href="#">Pets</a>
+                            <ul class="flyout-nav-2">
+                                <li>
+                                    <a href="#">Dog</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cat</a>
+                                </li>
+                                <li>
+                                    <a href="#">Monkey</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Writing</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Contact</a>
+        </li>
+    </ul>
+
+</body>
+
+</html>

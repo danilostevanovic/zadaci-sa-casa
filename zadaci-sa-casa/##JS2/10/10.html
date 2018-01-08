@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function zadnjiKarakteri(text, broj) {
+            return text.substring(text.length - broj);
+        }
+
+        function prviKarakteri(text, broj) {
+            return text.substring(0, broj);
+        }
+
+        function karakteriOdDo(text, b1, b2) {
+            return text.substring(b1 - 1, b2);
+        }
+
+        function prvoPojavljivanje(index, text) {
+            return text.indexOf(index) + 1;
+        }
+
+        function brojPojavljivanje(index, text) {
+            if (text.indexOf(index, text) !== -1) {
+                var counter = 0;
+                for (var i = 0; i < text.length; i++) {
+                    if (text.substr(i, 1) == index) {
+                        counter++;
+                    }
+                } return counter;
+            } else {
+                return "Karakter nije pronadjen"
+            }
+        }
+
+        function brojPojavljivanjeZanemariVelicinu(index, text) {
+            index = index.toLowerCase();
+            text = text.toLowerCase();
+            if (text.indexOf(index, text) !== -1) {
+                var counter = 0;
+                for (var i = 0; i < text.length; i++) {
+                    if (text.substr(i, 1) == index) {
+                        counter++;
+                    }
+                } return counter;
+            } else {
+                return "Karakter nije pronadjen"
+            }
+        }
+        // // brojSlovaUStringu("Kako si? 2 i 2 su 5");//
+        //  treba da izbroji slova u stringu (bez razmaka, brojeva i znakova interpunkcije)
+        //   u ovom slučaju treba a vrati 9
+
+        function brojSlovaUStringu(text) {
+            var counter = 0;
+            var arr = [];
+            var slova = ['A', 'a', 'N', 'n', 'B', 'b', 'O', 'o', 'C', 'c', 'P', 'p', 'D', 'd', 'Q', 'q',
+                'E', 'e', 'R', 'r', 'F', 'f', 'S', 's', 'G', 'g', 'T', 't', 'H', 'h', 'U', 'u', 'I', 'i', 'V', 'v',
+                'J', 'j', 'W', 'w', 'K', 'k', 'X', 'x', 'L', 'l', 'Y', 'y', 'M', 'm', 'Z', 'z'];
+            for (var i in text) {
+                arr.push(text[i]);
+            }
+            for (var s in slova) {
+                for (var r in arr) {
+                    if (slova[s] == arr[r]) {
+                        counter++;
+                    }
+                }
+            }
+            return counter;
+        }
+        console.log(brojSlovaUStringu("Kako si? 2 i 2 su 5"));
+
+
+        function zameni(search, replace, subject) {
+            while (subject.indexOf(search) != -1) {
+                subject = subject.replace(search, replace);
+            }
+            return subject;
+        }
+        console.log(zameni("a", "f", "JavaScript"));// Zemenite sva pojavljivanja a sa f u reči JavaScript
+        //   u ovom slučaju funkcija treba da vrati JfvfScript 
+
+
+        function izbrisiRazmake(text) {
+            var arr = [];
+            for (var i in text) {
+                arr.push(text[i]);
+            }
+            if (arr[0] == ' ') {
+                delete arr[0];
+            }
+            if (arr[arr.length - 1] == ' ') {
+                delete arr[arr.length - 1];
+            }
+            var newText = arr.join('');
+            return newText;
+        }
+        console.log(izbrisiRazmake(' razmak pocetak i kraj '));
+
+        function loto(winNumbers,totalNumbers){
+            var arr = [];
+            for(var i=0;i<winNumbers;i++){
+                var random = Math.floor(Math.random()*totalNumbers)+1;
+                arr.push(random);
+            }
+            return arr;
+        }
+
+        console.log(loto(6,36));
+    </script>
+</body>
+
+</html>
