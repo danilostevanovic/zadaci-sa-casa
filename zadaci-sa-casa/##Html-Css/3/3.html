@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #road{
+        width: 100%;
+        border: 5px dashed black;
+        position: absolute;
+        top: 50%;
+    }
+    #kola{
+        width: 200px;
+        position: absolute;
+        top: 41%;
+        animation: voznja 10s linear infinite;
+    }
+    @keyframes voznja{
+        0%{
+            left: -25%;
+        }
+        100%{
+            left: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <img id="kola" src="kola.png" alt="kola">
+    <div id="road"></div>
+</body>
+</html>
