@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .video-background {
+            background: #000;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -99;
+        }
+
+        .video-foreground,
+        .video-background #myVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -99;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .video-foreground {
+                height: 300%;
+                top: -100%;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .video-foreground {
+                width: 300%;
+                left: -100%;
+            }
+        }
+
+        #riba-1 {
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            animation: plivaLevo infinite linear 20s;
+        }
+        #riba-2{
+            width: 100px;
+            position: absolute;
+            top: 20%;
+            animation:  GoreDole  infinite linear 10s;
+        }
+        @keyframes plivaLevo {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -25%;
+            }
+        }
+
+        @keyframes GoreDole {
+            0% {
+                transform: translateY(-50px) translateX(0) rotate(30deg);
+            }
+            25% {
+                transform: translateY(50px) translateX(250px) rotate(20deg);
+            }
+            50% {
+                transform: translateY(100px) translateX(500px);
+            }
+            75% {
+                transform: translateY(50px) translateX(850px) rotate(-20deg);
+            }
+            100% {
+                transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-background">
+        <img id="riba-1" src="fish.png" alt="fish">
+        <img id="riba-2" src="fish-2.png" alt="fish">
+        <div class="video-foreground">
+            <video autoplay muted loop id="myVideo">
+                <source src="Fish-Tank.mp4" type="video/mp4">
+            </video>
+        </div>
+</body>
+
+</html>
